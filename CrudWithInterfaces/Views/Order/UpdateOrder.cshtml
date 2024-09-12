@@ -1,0 +1,13 @@
+﻿
+@model Order
+
+<h2>Sipariş Güncelle</h2>
+
+<form asp-controller="Order" asp-action="UpdateOrder" method="post">
+	<div class="form-group">
+		<label asp-for="OrderNumber">Sipariş Numarası: </label>
+		<input asp-for="OrderNumber" />
+	</div>
+	<input asp-for="Id" hidden/>
+	<button class="btn btn-primary" type="submit">Sipariş Güncelle</button>
+</form>

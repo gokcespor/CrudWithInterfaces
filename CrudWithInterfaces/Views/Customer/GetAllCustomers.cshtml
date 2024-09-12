@@ -1,0 +1,40 @@
+﻿
+@model List<Customer>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Id</th>
+			<th scope="col">Müşteri Adı</th>
+			<th scope="col">Müşterinin Yaşı</th>
+			<th scope="col"></th>
+			<th scope="col"></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.Id</td>
+				<td>@item.Name</td>
+				<td>@item.Age</td>
+				<td>
+					<form asp-action="DeleteCustomer" asp-controller="Customer" method="post">
+						<input name="id" value="@item.Id" hidden />
+						<button class="btn btn-danger">
+							<i class="fa-solid fa-trash"></i>
+						</button>
+					</form>
+				</td>
+				<td>
+					<form asp-action="UpdateCustomer" asp-controller="Customer" method="get">
+						<input name="id" value="@item.Id" hidden />
+						<button class="btn btn-warning">
+							<i class="fa-regular fa-pen-to-square"></i>
+						</button>
+					</form>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

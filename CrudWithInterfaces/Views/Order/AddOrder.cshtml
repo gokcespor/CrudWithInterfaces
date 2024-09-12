@@ -1,0 +1,11 @@
+﻿
+@model Order
+<h2>Yeni Sipariş Ekle</h2>
+
+<form asp-controller="Order" asp-action="AddOrder" method="post">
+	<div class="form-group">
+		<label for="OrderNumber">Sipariş Numarası: </label>
+		<input class="form-control" type="text" name="OrderNumber" />
+	</div>
+	<button class="btn btn-primary" type="submit">Sipariş Ekle</button>
+</form>
